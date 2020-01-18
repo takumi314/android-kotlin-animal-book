@@ -9,8 +9,15 @@ class SubActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sub)
+        // タイトル名を設定する
+        setTitle("図鑑画面")
         // ボタンイベントを監視する
         setOnClickListener()
+    }
+
+    private fun setTitle(title: String) {
+        val fragment = titleFragment as? TitleFragment
+        fragment?.setTitle(title)
     }
 
     private fun setOnClickListener() {

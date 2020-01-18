@@ -12,9 +12,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val fragment = titleFragment as? TitleFragment
-        fragment?.setTitle("フラグメント動物図鑑")
-
+        // タイトル名を設定する
+        setTitle("フラグメント動物図鑑")
         // 「次へ」ボタンのタップイベントを監視する
         nextButton.setOnClickListener {
             // Sub画面を表示する
@@ -22,6 +21,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+    }
+
+    // タイトル用のフラグメントに文字列を表示する
+    private fun setTitle(title: String) {
+        val fragment = titleFragment as? TitleFragment
+        fragment?.setTitle(title)
     }
 
 }
